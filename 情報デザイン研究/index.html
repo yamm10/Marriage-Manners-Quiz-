@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>結婚式マナークイズ</title>
+
+</head>
+<body>
+<div class="container">
+    <h1>Q1,結婚式で適切な服装はどっち</h1>
+    
+    <!-- 画像を表示 -->
+    <img src="images/midori.PNG" alt="みどりのやつ" class="custom-image" onclick="redirectToQuizAnswer()">
+    <img src="images/syo-to.PNG" alt="丈短い" class="custom-image" onclick="redirectToExternalSite()">
+    
+</div>
+
+<script>
+function redirectToQuizAnswer() {
+    window.location.href = '1seikai.html'; // 正解のページに遷移
+}
+
+function redirectToExternalSite() {
+    window.location.href = '1huseikai.html';
+}
+</script>
+
+</body>
+</html>
