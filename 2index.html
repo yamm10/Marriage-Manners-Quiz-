@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css">
-<title>結婚式マナークイズ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>結婚式マナークイズ</title>
 
 </head>
+
 <body>
-<div class="container">
-    <h1>Q2,結婚式で適切な服装はどっち</h1>
-    
-    <!-- 画像を表示 -->
-    <img src="images/siro.PNG" alt="全身白" class="custom-image" onclick="redirectToQuizAnswer()">
-    <img src="images/aka.PNG" alt="赤" class="custom-image" onclick="redirectToExternalSite()">
-    
-</div>
+    <header>
+    <div class="title">Wedding Manners Quiz!</div>
+    <div class="menu" onclick="toggleMenu()">
+        <div class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <nav class="menu-items">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </nav>
+    </header>
 
-<script>
-function redirectToQuizAnswer() {
-    window.location.href = '2huseikai.html'; 
-}
+    <div class="container">
+        <h1>Q2,結婚式で適切な服装はどっち</h1>
 
-function redirectToExternalSite() {
-    window.location.href = '2seikai.html';
-}
-</script>
+        <!-- 画像を表示 -->
+        <a href="2huseikai.html">
+            <img src="images/siro.PNG" alt="全身白" class="custom-image">
+        </a>
+        <a href="2seikai.html">
+            <img src="images/aka.PNG" alt="赤" class="custom-image">
+        </a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const menuItems = document.querySelector('.menu-items');
+            menuIcon.classList.toggle('open');
+            menuItems.classList.toggle('open');
+        }
+    </script>
 
 </body>
+
 </html>

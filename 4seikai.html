@@ -8,6 +8,21 @@
 
 </head>
 <body>
+    <header>
+        <div class="title">Wedding Manners Quiz!</div>
+        <div class="menu" onclick="toggleMenu()">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <nav class="menu-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
 <div class="container">
     <h1>正解！</h1>
     
@@ -24,10 +39,12 @@
 </div>
 
 <script>
-// JavaScriptで外部サイトへのリダイレクトを制御する関数
-function redirectToExternalSite() {
-    window.location.href = '5index.html';
-}
+function toggleMenu() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const menuItems = document.querySelector('.menu-items');
+            menuIcon.classList.toggle('open');
+            menuItems.classList.toggle('open');
+        }
 </script>
 
 </body>

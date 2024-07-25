@@ -9,18 +9,39 @@
 </head>
 
 <body>
+
+    <header>
+        <div class="title">Wedding Manners Quiz!</div>
+        <div class="menu" onclick="toggleMenu()">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <nav class="menu-items">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
 <div class="container">
     <h1 class="result-text">不正解！</h1>
     
-    <!-- ボタン -->
-    <button class="custom-button"onclick="redirectToQuizPage()"> < 戻る </button>
-    
+   
+      <!-- ボタン -->
+      <a href="4index.html">
+        <button class="custom-button " onclick="redirectToQuizPage()"> < 戻る </button>
+   
 </div> 
 
 <script>
-    function redirectToQuizPage() {
-        window.location.href = '4index.html'; // 元のページに遷移
-    }
+     function toggleMenu() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const menuItems = document.querySelector('.menu-items');
+            menuIcon.classList.toggle('open');
+            menuItems.classList.toggle('open');
+        }
 </script>
 
 

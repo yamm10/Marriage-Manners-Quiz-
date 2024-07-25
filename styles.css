@@ -1,140 +1,224 @@
-/* スタイリングは必須ではありませんが、見やすくするために追加 */
 body {
     font-family: "新丸ゴ R JIS2004 AP";
     line-height: 1.6;
     margin: 20px;
     text-align: center;
-    /* 中央揃え */
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    /* 水平中央揃え */
-    
 }
 
 .image-container {
-    text-align: center; /* 画像を中央に配置 */
+    text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    position: relative; /* 親要素を相対配置にする */
-  
+    position: relative;
 }
 
 header p {
     font-family: "新丸ゴ R JIS2004 AP";
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid #ddd;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.menu-icon div {
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    transition: background-color 0.3s, transform 0.3s; /* スムーズな変化を追加 */
+}
+
+.menu-icon:hover div {
+    background-color: #333; /* カーソルを合わせたときの色 */
+    transform: scale(1.1); /* サイズを少し大きくする */
+}
+
+.menu-icon.open div {
+    background-color: #333;
+}
+
+
+
+.menu-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: black;
+    margin: 5px 0;
+}
+
+.menu-items.open {
+    display: flex;
+}
+
+
 
 img {
-    max-width: 30%;/* 画像の幅を最大まで広げる */
-    /*height: auto;*/
-   /* margin-bottom: 20px;/* 画像の下に余白を作る */
-    margin: 20px; /* 画像の上下左右に20pxの余白を追加 */
-    cursor: pointer;/* マウスが重なった時にカーソルを変更 */
+    max-width: 30%;
+    margin: 20px;
+    cursor: pointer;
 }
 
 img:hover {
-    /* transform: scale(1.1); /* 画像を拡大 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* 影を追加 */
     opacity: 0.8;
-    /* 透明度を変更 */
 }
 
-/* 追加: small-imageクラスの画像のサイズを縮小 */
 .small-image {
     width: 30%;
-    /* 画像の幅を20%に設定 */
     cursor: default;
-    /* カーソルの変更を無効化 */
     box-shadow: none;
-    /* 影を削除 */
     opacity: 1;
-    /* 透明度を100%に設定 */
-    margin-bottom: 40px; /* 画像の下に余白を追加 */
-    display: inline-block; /* インラインブロック要素に設定 */
-    vertical-align: middle; /* 中央揃え */
+    margin-bottom: 40px;
+    display: inline-block;
+    vertical-align: middle;
 }
-
 
 button {
     font-size: 18px;
-    /* フォントサイズを大きくする */
     padding: 10px 20px;
-    /* パディングを追加してボタンを大きくする */
     cursor: pointer;
-    /* マウスが重なった時にカーソルを変更 */
 }
 
-
-
-/* styles.css または 各HTMLファイルの <style> タグ内に追加 */
 .custom-button {
-    display: inline-block;  /* 他の要素と同じ行に表示しつつ、ブロック要素のように幅と高さを設定可能 */
-    padding: 10px 20px;     /* ボタン内の余白。上下10px、左右20px */
-    font-size: 16px;        /* テキストのサイズを16pxに設定 */
-    color: #816759;         /* テキストの色を茶色(#816759)に設定 */
-    text-align: center;     /* テキストを中央揃えに設定 */
-    text-decoration: none;  /* テキストの下線を無効にする */
-    border: 2px solid #816759;  /* 2pxの茶色の枠線を追加 */
-    border-radius: 30px;    /* ボタンの角を30pxの円弧で丸くする */
-    background-color: transparent;  /* 背景を透明に設定 */
-    cursor: pointer;        /* カーソルを指示棒に変更 */
-    transition: background-color 0.3s, color 0.3s;  /* 背景色と文字色の変更に0.3秒のアニメーション効果を設定 */
-    position: relative;     /* 相対位置を設定 */
-    padding-right: 20px;    /* 右側に20pxの余白を追加 */
-    margin-top: 0px;       /* 上部に20pxの余白を追加し、ボタンを下に移動 */
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #816759;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #816759;
+    border-radius: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    padding-right: 20px;
+    margin-top: 0px;
 }
 
-.custom-button:hover {/*カーソル合わせた時のやつ*/
+.custom-button:hover {
     background-color: #816759;
     color: white;
 }
 
-.custom-button2{
-    display: inline-block;  /* 他の要素と同じ行に表示しつつ、ブロック要素のように幅と高さを設定可能 */
-    padding: 10px 20px;     /* ボタン内の余白。上下10px、左右20px */
-    font-size: 16px;        /* テキストのサイズを16pxに設定 */
-    color: #816759;         /* テキストの色を茶色(#816759)に設定 */
-    text-align: center;     /* テキストを中央揃えに設定 */
-    text-decoration: none;  /* テキストの下線を無効にする */
-    border: 2px solid #816759;  /* 2pxの茶色の枠線を追加 */
-    border-radius: 30px;    /* ボタンの角を30pxの円弧で丸くする */
-    background-color: transparent;  /* 背景を透明に設定 */
-    cursor: pointer;        /* カーソルを指示棒に変更 */
-    transition: background-color 0.3s, color 0.3s;  /* 背景色と文字色の変更に0.3秒のアニメーション効果を設定 */
-    position: relative;     /* 相対位置を設定 */
-    padding-right: 20px;    /* 右側に20pxの余白を追加 */
-    margin-top: 20px;       /* 上部に20pxの余白を追加し、ボタンを下に移動 */
-    /*float: right; /* ボタンを右寄せ */
-    /*margin-right: 80px; /* 例として左に10pxのマージンを追加 */
+.custom-button2 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #816759;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #816759;
+    border-radius: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    padding-right: 20px;
+    margin-top: 15px; /* 上のマージンを追加して下に移動 */
+    position: static; /* 絶対位置指定を解除 */
 
-    position: absolute; /* ボタンを絶対配置にする */
-    bottom: 30px; /* 下端からの位置（適宜調整） */
-    right: 150px; /* 右端からの位置（適宜調整） */
     
 }
 
 .arrow {
-    font-size: 16px; /* 矢印のサイズをボタンのテキストサイズに合わせる */
-    margin-left: 10px; /* 矢印とテキストの間に余白を追加 */
+    font-size: 16px;
+    margin-left: 10px;
 }
-
 
 .custom-button2:hover {
     background-color: #816759;
     color: white;
 }
 
+.custom-button3 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #816759;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #816759;
+    border-radius: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    padding-right: 20px;
+    margin-top: 20px;
+    position: static;
 
-/* 追加: テキストとボタンの余白を設定 */
-.result-text {
-    margin-top: 150px; /* テキストの上に余白を追加 */
-    margin-bottom: 30px; /* テキストの下に余白を追加 */
-    margin-left: 20px; /* テキストを右に調整 */
+}
+
+.custom-button3:hover {
+    background-color: #816759;
+    /* ホバー時に背景色を変更 */
+    color: white;
 }
 
 
+.result-text {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
 
+.about-text {
+    padding: 0 20px;
+    /* 左右に20pxのパディングを追加 */
+    margin-top: 20px;
+    /* 上のマージンを追加 */
+    margin-bottom: 20px;
+    /* 下のマージンを追加 */
+
+
+}
+
+.large-image {
+    width: 90%;
+    /* 画像の幅をコンテナの幅に合わせて100%にする */
+    max-width: 800px;
+    /* 最大幅を800pxに制限 */
+    height: auto;
+    /* 高さを自動調整 */
+    pointer-events: none;
+    /* カーソルを合わせても反応しない */
+}
